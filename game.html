@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+
+		let words = [
+			"javascript",
+			"cat",
+			"dog",
+			"botle"
+		];
+		let word = words[Math.floor(Math.random() * words.length)];
+		console.log(word);
+
+
+		let answerArrey = []
+
+		for (let i = 0; i < word.length; i++)
+			answerArrey[i] = "_";
+
+
+
+		let ramainingLetters = word.length
+		let sprobi = 10;
+		while (ramainingLetters > 0 && sprobi > 0) { //показує скільки разів потрібно провести ввод літер
+			alert(answerArrey.join(" "))// показує то скільки литер вже вгадано або ні 
+
+			var guess = prompt("Вгадай (напиши) одну літеру або натисни cancel щоб закінчити гру!"); // запит на ввод літери 
+			console.log(sprobi)
+			if (guess === null) { // якщо в запит нічого не введено то зупиняє код через ключ слово brake та цикл починається знову 
+
+				break;
+			} else if (guess.length !== 1) {// якощо кількість вводиних литер не дорівнює однієї то виникає повідомлення 
+				alert("ЛИШЕ ОДНУ ЛІТЕРУ!");
+			} else {
+				sprobi--;
+				for (let j = 0; j < word.length; j++) { // цикл який перевіряє загаданє слово
+					guess = guess.toLowerCase();
+					if (word[j] === guess && answerArrey[j] === "_") { // та якщо знаходить в слові за допомогою індекса потрібну букву то 
+						answerArrey[j] = guess; // вписує її  у  alert(answerArrey.join(" ")) на потрібному місці бо до цьго за допомогою індекса він вже "шифрував" слово 
+						ramainingLetters--; // інкрементує (зменушє) на 1 кількість запитів вводу доки не відгадає всі літери тоб-то кількість вгаданих слів не буде дорівнювати цілому (вгаданому) слову
+					}
+
+				}
+			}
+		}
+		if (sprobi > 0) {
+			alert("Чудово ! ти вгадав то є " + word)
+		} else {
+			alert("ты програв")
+		}
+	</script>
+</body>
+
+</html>
