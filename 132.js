@@ -1,0 +1,1 @@
+let miName = valik;
