@@ -15,7 +15,7 @@
 			"javascript",
 			"cat",
 			"dog",
-			"botle"
+			"bottle"
 		];
 		let word = words[Math.floor(Math.random() * words.length)];
 		console.log(word);
@@ -28,8 +28,9 @@
 
 
 
-		let ramainingLetters = word.length
-		let sprobi = 10;
+			let ramainingLetters = word.length
+			let sprobi = 10;
+			var youName = prompt("Ваше ім'я");
 		while (ramainingLetters > 0 && sprobi > 0) { //показує скільки разів потрібно провести ввод літер
 			alert(answerArrey.join(" "))// показує то скільки литер вже вгадано або ні 
 
@@ -53,7 +54,7 @@
 			}
 		}
 		if (sprobi > 0) {
-			alert("Чудово ! ти вгадав то є " + word)
+			alert("Чудово "+youName+" ти вгадав то є "+ word)
 		} else {
 			alert("ты програвxxxx")
 		}
